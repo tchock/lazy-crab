@@ -23,27 +23,49 @@
 //
 ////////////////////////////////////////////////////////////
 
+
+////////////////////////////////////////////////////////////
+// 
+// CUSTOM ADDITIONS BY MUNGOGAMES
+//
+// DEBUG switch resourcepaths. If in DEBUG mode, use the data from the folder next to it 
+// (no compiling needed if new resources will be added)
+//
+// If not in DEBUG mode the data from within the app will be used
+//
+// With this enhancement creating new content is possible without recompiling and in final versions
+// or open alphas/betas the app is just in one place
+//
+////////////////////////////////////////////////////////////
+
+
+
+
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include "ResourcePath.hpp"
+#include "ResourcePathOSX.hpp"
 #import <Foundation/Foundation.h>
 
 ////////////////////////////////////////////////////////////
-std::string resourcePath(void)
+std::string resourcePathOSX(void)
 {
     NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
     
 	std::string rpath;
 	NSBundle* bundle = [NSBundle mainBundle];
-    
+
 	if (bundle == nil) {
 #ifdef DEBUG
 		NSLog(@"bundle is nil... thus no resources path can be found.");
 #endif
 	} else {
 		NSString* path = [bundle resourcePath];
-		rpath = [path UTF8String] + std::string("/data/");
+#ifdef DEBUG
+    rpath = "data/"; // if debuging/testing, don't use the resources in the app but the ones in the data folder next to it
+#else
+    rpath = [path UTF8String] + std::string("/data/"); // if not a developer version, use the resources in the app
+#eindif
 	}
     
     [pool drain];

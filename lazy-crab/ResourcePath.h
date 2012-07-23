@@ -9,6 +9,9 @@
 #ifndef lazy_crab_ResourcePath_h
 #define lazy_crab_ResourcePath_h
 
+#include <string>
+using namespace std;
 
+string resourcePath();
 
 #endif

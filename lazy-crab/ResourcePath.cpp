@@ -7,3 +7,17 @@
 //
 
 #include <iostream>
+#ifdef __APPLE__
+#include "ResourcePathOSX.hpp"
+#endif
+#include "ResourcePath.h"
+
+string resourcePath()
+{
+  // Individual Resource Handling in OS X (copies in .app file, so there is a specific function needed (in objective-c))
+#ifdef __APPLE__
+  return resourcePathOSX();
+#else
+  return "data/"; // if not OS X, simply use the data folder in the same dir
+#endif
+}

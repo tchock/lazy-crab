@@ -5,7 +5,6 @@
 #include <Box2D/Box2D.h>
 #include <string>
 #include <iostream>
-#include "ResourcePath.hpp"
 #include "GameContainer.h"
 #include "EntityManager.h"
 #include "ControlManager.h"
@@ -17,10 +16,13 @@
 #include "CameraComponent.h"
 #include "OptionComponent.h"
 
+#include "ResourcePathOSX.hpp"
+#include "ResourcePath.h"
+
 using namespace std;
 
 int main (int argc, const char * argv[])
-{
+{  
   string gameName = "Lazy Crab";
   float currentFPS = 0;
   
