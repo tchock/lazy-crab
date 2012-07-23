@@ -18,8 +18,7 @@ class TerrainComponent: public Component {
 private:
   int pointCount;
   
-  b2Vec2* chainVertices;
-  sf::VertexArray renderVertices;  
+  b2Vec2* chainVertices; 
   
   b2BodyDef* bodyDef;
   b2Body* body;
@@ -27,10 +26,11 @@ private:
   b2ChainShape* chain;
   
 public:
-  TerrainComponent(GameContainer* gc, int pointCount, float x, float y);
+  TerrainComponent(GameContainer* gc, string id, int pointCount);
   void addPoint(int index, float x, float y);
   void generate();
-  void update();
+  void setOwnerEntity(Entity* owner);
+  void update(GameContainer* gc) {};
 };
 
 #endif

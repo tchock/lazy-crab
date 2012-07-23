@@ -15,7 +15,7 @@ WireboxRenderComponent::WireboxRenderComponent(string id)
 :RenderComponent(id)
 {
   shape.setOutlineColor(sf::Color::Green);
-  shape.setOutlineThickness(1);
+  shape.setOutlineThickness(0.1f);
   shape.setFillColor(sf::Color::Transparent);
 }
 
@@ -26,9 +26,12 @@ void WireboxRenderComponent::render(GameContainer *gc)
 
 void WireboxRenderComponent::update(GameContainer *gc)
 {
-  shape.setPosition(owner->getPosition().getSFMLPos());
   if (owner->hasComponent("body"))
   {
+    sf::Vector2f ownerPos = owner->getPosition().getSFMLPos();
+    sf::Vector2f bodySize = ((BodyComponent*) owner->getComponent("body"))->getSize().getSFML();
+    
+    shape.setPosition(ownerPos.x - bodySize.x/2, ownerPos.y - bodySize.y/2);
     shape.setSize(((BodyComponent*) owner->getComponent("body"))->getSize().getSFML());
 
   }

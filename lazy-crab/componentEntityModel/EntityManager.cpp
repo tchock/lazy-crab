@@ -26,9 +26,10 @@ Entity* EntityManager::getEntity(string id) const
   return NULL;
 }
 
-void EntityManager::addEntity(Entity* entity)
+Entity* EntityManager::addEntity(Entity* entity)
 {
   entities.push_back(entity);
+  return entity;
 }
 
 void EntityManager::updateRender()

@@ -39,3 +39,7 @@ Thumbs.db
 
 # DOC files #
 doc/
+
+*.ogg
+*.jpg
+*.jpeg

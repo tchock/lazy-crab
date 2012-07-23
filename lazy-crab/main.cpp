@@ -11,6 +11,9 @@
 #include "Entity.h"
 #include "BodyComponent.h"
 #include "WireboxRenderComponent.h"
+#include "TerrainComponent.h"
+#include "WirechainRenderComponent.h"
+#include "CameraComponent.h"
 
 using namespace std;
 
@@ -22,7 +25,7 @@ int main (int argc, const char * argv[])
   // Create the main window
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
- 
+  window->setVerticalSyncEnabled(true);
   
   
   // Load a sprite to display
@@ -40,7 +43,7 @@ int main (int argc, const char * argv[])
 
   // Load a music to play
   sf::Music music;
-  if (!music.openFromFile(resourcePath() + "nice_music.ogg"))
+  if (!music.openFromFile(resourcePath() + "castle_in_the_sky.ogg"))
   	return EXIT_FAILURE;
 
   
@@ -50,15 +53,33 @@ int main (int argc, const char * argv[])
   // Generates the World
   b2Vec2 gravity(0, -9.8);
   b2World* world = new b2World(gravity);
-    
+  
   GameContainer* gc = new GameContainer(window, world);
-    
+  
   EntityManager* em = new EntityManager();
   
-  em->addEntity(new Entity(gc, "beispiel_entity"));
-  em->getEntity("beispiel_entity")->setPosition(100, 10);
-  em->getEntity("beispiel_entity")->addComponent(new BodyComponent(gc, 10, 20));
-  em->getEntity("beispiel_entity")->addComponent(new WireboxRenderComponent("wirebox"));
+  Entity* player = em->addEntity(new Entity(gc, "player"));
+  player->setPosition(100, 10);
+  player->addComponent(new BodyComponent(gc, 0.4f, 1.8f));
+  player->addComponent(new WireboxRenderComponent("wirebox"));
+  
+  float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
+  Entity* camera = em->addEntity(new Entity(gc, "camera"));
+  camera->setPosition(100, 10);
+  camera->addComponent(new CameraComponent(gc, player, 40, 40*windowRatio));
+  
+  Entity* terrain = em->addEntity(new Entity(gc, "terrain"));
+  terrain->setPosition(0, 0);
+  terrain->addComponent(new WirechainRenderComponent(6));
+  terrain->addComponent(new TerrainComponent(gc, "gameTerrain", 6));
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 10, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 30, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 40, -2);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 70, 10);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 140, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 1000, 15);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->generate();
+  
   
   // Play the music
   music.play();
@@ -86,7 +107,7 @@ int main (int argc, const char * argv[])
   	gc->getWindow()->clear();
   	    
     em->updateRender();
-    gc->getWorld()->Step(1/currentFPS, 8, 3);
+    gc->getWorld()->Step(1/currentFPS,  8, 3);
     gc->getWindow()->setView(gc->view);
     
     // Update the window

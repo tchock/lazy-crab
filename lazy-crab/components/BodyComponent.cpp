@@ -72,5 +72,4 @@ void BodyComponent::update(GameContainer *gc)
 {
   owner->setPosition(body->GetPosition().x, body->GetPosition().y);
   owner->setRotation(body->GetAngle());
-  cout << body->GetPosition().y << endl;
 }

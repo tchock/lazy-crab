@@ -40,6 +40,11 @@ Component* Entity::getComponent(string id) const
     if (components[i]->getId() == id)
       return components[i];
   
+  // Iterate through the vector of RenderingComponents, if ID is found, return the component
+  for(vector<RenderComponent*>::size_type i = 0; i != renderComponents.size(); i++)
+    if (renderComponents[i]->getId() == id)
+      return renderComponents[i];
+  
   // Otherwise return pointer to NULL
   return NULL;
 }
@@ -48,10 +53,13 @@ bool Entity::hasComponent(string id) const
 {
   // Iterate through the vector, if ID is found, return true
   for(vector<Component*>::size_type i = 0; i != components.size(); i++)
-  {
     if (components[i]->getId() == id)
       return true;
-  }
+  
+  // Iterate through the vector of RenderingComponents, if ID is found, return true
+  for(vector<RenderComponent*>::size_type i = 0; i != renderComponents.size(); i++)
+    if (renderComponents[i]->getId() == id)
+      return true;
   
   // Otherwise the component is not existent -> return false;
   return false;

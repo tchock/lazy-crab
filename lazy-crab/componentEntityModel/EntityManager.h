@@ -23,7 +23,7 @@ private:
 public:
   EntityManager();
   Entity* getEntity(string id) const;
-  void addEntity(Entity* entity);
+  Entity* addEntity(Entity* entity);
   void updateRender();
 };
 
