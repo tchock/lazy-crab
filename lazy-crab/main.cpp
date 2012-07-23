@@ -43,7 +43,7 @@ int main (int argc, const char * argv[])
 
   // Load a music to play
   sf::Music music;
-  if (!music.openFromFile(resourcePath() + "castle_in_the_sky.ogg"))
+  if (!music.openFromFile(resourcePath() + "fairy_road.ogg"))
   	return EXIT_FAILURE;
 
   
@@ -59,25 +59,25 @@ int main (int argc, const char * argv[])
   EntityManager* em = new EntityManager();
   
   Entity* player = em->addEntity(new Entity(gc, "player"));
-  player->setPosition(100, 10);
-  player->addComponent(new BodyComponent(gc, 0.4f, 1.8f));
+  player->setPosition(10, 0);
+  player->addComponent(new BodyComponent(gc, 0.6f, 1.8f, true));
   player->addComponent(new WireboxRenderComponent("wirebox"));
   
   float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
   Entity* camera = em->addEntity(new Entity(gc, "camera"));
   camera->setPosition(100, 10);
-  camera->addComponent(new CameraComponent(gc, player, 40, 40*windowRatio));
+  camera->addComponent(new CameraComponent(gc, player, 30, 30*windowRatio));
   
   Entity* terrain = em->addEntity(new Entity(gc, "terrain"));
-  terrain->setPosition(0, 0);
+  terrain->setPosition(0, -10);
   terrain->addComponent(new WirechainRenderComponent(6));
   terrain->addComponent(new TerrainComponent(gc, "gameTerrain", 6));
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 10, 5);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 30, 5);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 40, -2);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 70, 10);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 140, 5);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 1000, 15);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 5, 0);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(1, 20, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(2, 30, -2);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(3, 50, 10);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(4, 80, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(5, 100, 15);
   ((TerrainComponent*) terrain->getComponent("gameTerrain"))->generate();
   
   

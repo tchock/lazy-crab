@@ -10,7 +10,7 @@
 #include "BodyComponent.h"
 #include "Entity.h"
 
-BodyComponent::BodyComponent(GameContainer* gc, float x, float y, string bodyType, bool fixedRotation, float density, float friction)
+BodyComponent::BodyComponent(GameContainer* gc, float x, float y, bool fixedRotation, string bodyType, float density, float friction)
 {
   this->gc = gc;
   size.setVector(x, y);

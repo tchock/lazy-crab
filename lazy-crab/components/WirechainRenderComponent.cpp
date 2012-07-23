@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "WirechainRenderComponent.h"
+#include "Entity.h"
 
 WirechainRenderComponent::WirechainRenderComponent(int pointCount)
 :RenderComponent("wirechainRender")
@@ -20,12 +21,16 @@ WirechainRenderComponent::WirechainRenderComponent(int pointCount)
 
 void WirechainRenderComponent::addPoint(int index, float x, float y)
 {
-  Vector2f pos = Vector2f(x, y);
+  sf::Vector2f ownerPos = owner->getPosition().getSFMLPos();
+  Vector2f pos = Vector2f(x + ownerPos.x, y + ownerPos.y);
   this->renderVertices[index] = pos.getSFMLPos();
 }
 
 void WirechainRenderComponent::addPoint(int index, sf::Vector2f pos)
 {
+  sf::Vector2f ownerPos = owner->getPosition().getSFMLPos();
+  pos.x += ownerPos.x;
+  pos.y += ownerPos.y;
   this->renderVertices[index] = pos;
 }
 

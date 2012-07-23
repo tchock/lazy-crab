@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 #include "WireboxRenderComponent.h"
 #include "Entity.h"
 #include "BodyComponent.h"
@@ -30,9 +31,10 @@ void WireboxRenderComponent::update(GameContainer *gc)
   {
     sf::Vector2f ownerPos = owner->getPosition().getSFMLPos();
     sf::Vector2f bodySize = ((BodyComponent*) owner->getComponent("body"))->getSize().getSFML();
-    
-    shape.setPosition(ownerPos.x - bodySize.x/2, ownerPos.y - bodySize.y/2);
+    shape.setOrigin(bodySize.x/2, bodySize.y/2);
+    shape.setPosition(ownerPos.x, ownerPos.y);
     shape.setSize(((BodyComponent*) owner->getComponent("body"))->getSize().getSFML());
+    shape.setRotation(-(owner->getRotation() * (180/M_PI)));
 
   }
 }

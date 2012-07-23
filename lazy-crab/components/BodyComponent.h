@@ -25,7 +25,7 @@ private:
   b2PolygonShape* bodyBox;
 
 public:
-  BodyComponent(GameContainer* gc, float x, float y, string bodyType="dynamic", bool fixedRotation=true, float density=1.0f, float friction=1.0f);
+  BodyComponent(GameContainer* gc, float x, float y, bool fixedRotation=false, string bodyType="dynamic", float density=1.0f, float friction=1.0f);
   Vector2f getSize() const;
   b2Body* getBody() const;
   void setOwnerEntity(Entity* owner);
