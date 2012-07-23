@@ -23,7 +23,10 @@ private:
 public:
   EntityManager();
   Entity* getEntity(string id) const;
+  vector<Entity*> getNearbyEntities(Entity* entity, float distance=5.0f) const;
+  
   Entity* addEntity(Entity* entity);
+  void removeEntity(string id);
   void updateRender();
 };
 

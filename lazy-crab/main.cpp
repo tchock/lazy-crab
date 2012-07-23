@@ -8,12 +8,14 @@
 #include "ResourcePath.hpp"
 #include "GameContainer.h"
 #include "EntityManager.h"
+#include "ControlManager.h"
 #include "Entity.h"
 #include "BodyComponent.h"
 #include "WireboxRenderComponent.h"
 #include "TerrainComponent.h"
 #include "WirechainRenderComponent.h"
 #include "CameraComponent.h"
+#include "OptionComponent.h"
 
 using namespace std;
 
@@ -30,20 +32,20 @@ int main (int argc, const char * argv[])
   
   // Load a sprite to display
   sf::Texture texture;
-  if (!texture.loadFromFile(resourcePath() + "cute_image.jpg"))
+  if (!texture.loadFromFile(resourcePath() + "images/cute_image.jpg"))
   	return EXIT_FAILURE;
   sf::Sprite sprite(texture);
 
   // Create a graphical text to display
   sf::Font font;
-  if (!font.loadFromFile(resourcePath() + "sansation.ttf"))
+  if (!font.loadFromFile(resourcePath() + "fonts/sansation.ttf"))
   	return EXIT_FAILURE;
   sf::Text text("Hello SFML", font, 50);
   text.setColor(sf::Color::Black);
 
   // Load a music to play
   sf::Music music;
-  if (!music.openFromFile(resourcePath() + "fairy_road.ogg"))
+  if (!music.openFromFile(resourcePath() + "music/fairy_road.ogg"))
   	return EXIT_FAILURE;
 
   
@@ -55,11 +57,12 @@ int main (int argc, const char * argv[])
   b2World* world = new b2World(gravity);
   
   GameContainer* gc = new GameContainer(window, world);
+    
   
   EntityManager* em = new EntityManager();
   
   Entity* player = em->addEntity(new Entity(gc, "player"));
-  player->setPosition(10, 0);
+  player->setPosition(8, 0);
   player->addComponent(new BodyComponent(gc, 0.6f, 1.8f, true));
   player->addComponent(new WireboxRenderComponent("wirebox"));
   
@@ -79,6 +82,17 @@ int main (int argc, const char * argv[])
   ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(4, 80, 5);
   ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(5, 100, 15);
   ((TerrainComponent*) terrain->getComponent("gameTerrain"))->generate();
+  
+  Entity* options = em->addEntity(new Entity(gc, "options"));
+  options->addComponent(new OptionComponent("controls", "moveLeft", "A"));
+  options->addComponent(new OptionComponent("controls", "moveLeft_alt", "arrow_left"));
+  options->addComponent(new OptionComponent("controls", "moveRight", "D"));
+  options->addComponent(new OptionComponent("controls", "moveRight_alt", "arrow_right"));
+  
+  
+  
+  
+  //ControlManager::player(player);
   
   
   // Play the music
@@ -107,6 +121,11 @@ int main (int argc, const char * argv[])
   	gc->getWindow()->clear();
   	    
     em->updateRender();
+    
+    em->getNearbyEntities(em->getEntity("player"), 2);
+    
+    
+    
     gc->getWorld()->Step(1/currentFPS,  8, 3);
     gc->getWindow()->setView(gc->view);
     

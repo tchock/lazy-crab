@@ -6,15 +6,12 @@
 #include <SFML/Network.hpp>
 #include "Entity.h"
 
-class ControlHandler {
+class ControlManager {
 private:
   static bool jumpReady;
   
 public:
-  static void player (Entity* player, sf::Keyboard::Key moveRight, sf::Keyboard::Key moveLeft, sf::Keyboard::Key runToggler, sf::Keyboard::Key jumpToggler);
-
-  
-  
+  static void player (Entity* player, Entity* options);
 };
 
 #endif

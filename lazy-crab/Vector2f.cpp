@@ -53,17 +53,37 @@ void Vector2f::setY(float value)
 
 // Getter
 
-sf::Vector2f Vector2f::getSFML()
+sf::Vector2f Vector2f::getSFML() const
 {
   return sf::Vector2f(x,y);
 }
 
-sf::Vector2f Vector2f::getSFMLPos()
+sf::Vector2f Vector2f::getSFMLPos() const
 {
   return sf::Vector2f(x,-y);
 }
 
-b2Vec2 Vector2f::getBox2d()
+b2Vec2 Vector2f::getBox2d() const
 {
   return b2Vec2(x,y);
+}
+
+float Vector2f::getLength() const
+{
+  return sqrt(operator*(*this));
+}
+
+Vector2f Vector2f::operator+(const Vector2f& other) const
+{
+  return Vector2f(x + other.x, y + other.y);
+}
+
+Vector2f Vector2f::operator-(const Vector2f& other) const
+{
+  return Vector2f(x - other.x, y - other.y);
+}
+
+float Vector2f::operator*(const Vector2f& other) const
+{
+  return x * other.x + y * other.y;
 }

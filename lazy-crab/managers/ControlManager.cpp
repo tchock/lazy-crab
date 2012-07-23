@@ -6,13 +6,19 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-#include "ControlHandler.h"
+#include "ControlManager.h"
 #include "enums.h"
+#include <iostream>
+#include "OptionComponent.h"
 
-bool ControlHandler::jumpReady = true;
+bool ControlManager::jumpReady = true;
 
-void ControlHandler::player(Entity* player, sf::Keyboard::Key moveRight, sf::Keyboard::Key moveLeft, sf::Keyboard::Key runToggler, sf::Keyboard::Key jumpToggler)
+void ControlManager::player(Entity* player, Entity* options)
 {
+
+  
+  //if (sf::Keyboard::isKeyPressed()
+  
 /*  
   if (sf::Keyboard::isKeyPressed(runToggler))
     player->setRunning(true);
