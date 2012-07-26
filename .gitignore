@@ -46,3 +46,6 @@ Release/
 Release/*
 data/
 data/*
+
+
+*.opensdf
