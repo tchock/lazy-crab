@@ -32,10 +32,7 @@ int main (int argc, const char * argv[])
   // Create the main window
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-  
 
-
-  
   sf::Clock frameTimer;
     
   // Generates the World
@@ -87,10 +84,6 @@ int main (int argc, const char * argv[])
   
   //ControlManager::player(player);
   
-  
-
-      
-
   // Start the game loop
   while (window->isOpen())
   {
