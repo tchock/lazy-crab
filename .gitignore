@@ -40,5 +40,7 @@ Thumbs.db
 # DOC files #
 doc/
 
+Debug/
+Debug/*
 data/
 data/*
