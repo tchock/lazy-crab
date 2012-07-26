@@ -20,7 +20,6 @@
 #include "ResourcePathOSX.hpp"
 #include "ResourcePath.h"
 
-#include "XmlTest.h"
 
 using namespace std;
 
@@ -71,12 +70,10 @@ int main (int argc, const char * argv[])
   float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
   Entity* camera = em->addEntity(new Entity(gc, "camera"));
   camera->setPosition(100, 10);
-  camera->addComponent(new CameraComponent(gc, player, 10, 10*windowRatio));
+  camera->addComponent(new CameraComponent(gc, player, 30, 30*windowRatio));
   
   Entity* terrain = em->addEntity(new Entity(gc, "terrain"));
   
-  std::vector<Vector2f> coords = XmlTest::dump_to_stdout(resourcePath() + "worlds/world1.xml");
-  //terrain->setPosition(coords[0].getSFMLPos().x, coords[0].getSFMLPos().y);
   terrain->setPosition(0, 0);
   terrain->addComponent(new WirechainRenderComponent(5));
   terrain->addComponent(new TerrainComponent(gc, "gameTerrain", 5));
