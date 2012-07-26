@@ -7,10 +7,11 @@
 //
 
 #include <iostream>
-#include <cmath>
 #include "ComponentWireboxRender.h"
 #include "Entity.h"
 #include "ComponentBody.h"
+
+#define PI 3.14159265
 
 WireboxRenderComponent::WireboxRenderComponent(string id)
 :RenderComponent(id)
@@ -34,7 +35,7 @@ void WireboxRenderComponent::update(GameContainer *gc)
     shape.setOrigin(bodySize.x/2, bodySize.y/2);
     shape.setPosition(ownerPos.x, ownerPos.y);
     shape.setSize(((BodyComponent*) owner->getComponent("body"))->getSize().getSFML());
-    shape.setRotation(-(owner->getRotation() * (180/M_PI)));
+    shape.setRotation(-(owner->getRotation() * (180/PI)));
 
   }
 }
