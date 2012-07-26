@@ -33,23 +33,7 @@ int main (int argc, const char * argv[])
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
   
-  // Load a sprite to display
-  sf::Texture texture;
-  if (!texture.loadFromFile(resourcePath() + "images/cute_image.jpg"))
-  	return EXIT_FAILURE;
-  sf::Sprite sprite(texture);
 
-  // Create a graphical text to display
-  sf::Font font;
-  if (!font.loadFromFile(resourcePath() + "fonts/sansation.ttf"))
-  	return EXIT_FAILURE;
-  sf::Text text("Hello SFML", font, 50);
-  text.setColor(sf::Color::Black);
-
-  // Load a music to play
-  sf::Music music;
-  if (!music.openFromFile(resourcePath() + "music/fairy_road.ogg"))
-  	return EXIT_FAILURE;
 
   
   sf::Clock frameTimer;
@@ -104,8 +88,7 @@ int main (int argc, const char * argv[])
   //ControlManager::player(player);
   
   
-  // Play the music
-  music.play();
+
       
 
   // Start the game loop
