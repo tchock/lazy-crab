@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{163AC5D4-7018-45A3-9B66-1C26A4236265}</ProjectGuid>
+    <RootNamespace>lazy_crab_visual</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\C\Documents\Visual Studio 2010\Includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\C\Documents\Visual Studio 2010\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\Component.cpp" />
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\Entity.cpp" />
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\EntityManager.cpp" />
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\RenderComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\BodyComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\CameraComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\MovementComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\OptionComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\TerrainComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\WireboxRenderComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\components\WirechainRenderComponent.cpp" />
+    <ClCompile Include="..\..\lazy-crab\GameContainer.cpp" />
+    <ClCompile Include="..\..\lazy-crab\main.cpp" />
+    <ClCompile Include="..\..\lazy-crab\managers\ControlManager.cpp" />
+    <ClCompile Include="..\..\lazy-crab\ResourcePath.cpp" />
+    <ClCompile Include="..\..\lazy-crab\Vector2f.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\Component.h" />
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\Entity.h" />
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\EntityManager.h" />
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\RenderComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\BodyComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\CameraComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\ImageRenderComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\MovementComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\OptionComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\TerrainComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\WireboxRenderComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\components\WirechainRenderComponent.h" />
+    <ClInclude Include="..\..\lazy-crab\enums.h" />
+    <ClInclude Include="..\..\lazy-crab\GameContainer.h" />
+    <ClInclude Include="..\..\lazy-crab\managers\ControlManager.h" />
+    <ClInclude Include="..\..\lazy-crab\ResourcePath.h" />
+    <ClInclude Include="..\..\lazy-crab\ResourcePathOSX.hpp" />
+    <ClInclude Include="..\..\lazy-crab\structs.h" />
+    <ClInclude Include="..\..\lazy-crab\Vector2f.h" />
+    <ClInclude Include="..\..\lazy-crab\XmlTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Dropbox\Mungogames\data\entities.xml" />
+    <None Include="..\..\lazy-crab\fonts\sansation.ttf" />
+    <None Include="..\..\lazy-crab\images\cute_image.jpg" />
+    <None Include="..\..\lazy-crab\music\fairy_road.ogg" />
+    <None Include="..\..\lazy-crab\ResourcePathOSX.mm" />
+    <None Include="..\..\lazy-crab\worlds\world1.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

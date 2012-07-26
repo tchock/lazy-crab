@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<entityList>
+  
+  <!-- Terrain entity, that builds the ground of the world -->
+  <entity name="terrain" />
+    <attributes>
+      <attribute key="points" valueType="vectorArray" />
+    </attributes>
+    <components>
+      <component type="terrain" vectorArray="k:points" />
+      <component type="WirechainRender" pointCount="k:points:count" />
+    </components>  
+  </entity>
+  
+  <!-- Creature entity, that is a living being in the game world -->
+  <entity name="creature">
+    <attributes>
+      <attribute key="size" valueType="vector" defaultValue="0.6,1.8" />
+      <attribute key="playable" valueType="bool" defaultValue="0" />
+      <attribute key="isfriendly" valueType="bool" defaultValue="1" />
+      <attribute key="level" valueType="int" defaultValue="1" />
+    </attributes>
+    <components>
+      <component type="body" size="k:size" fixedRotation="1" />      
+    </components>
+  </entity>
+  
+  <entity name="camera">
+    <attributes>
+      <attribute key="span" valueType="float" defaultValue="30" />
+      <attribute key="center" valueType="entityId" defaultValue="player" />
+    </attributes> 
+    <components>
+      <component type="camera" center="k:center" span="k:span" />
+    </components>
+  </entity>
+    
+</entitiyList>

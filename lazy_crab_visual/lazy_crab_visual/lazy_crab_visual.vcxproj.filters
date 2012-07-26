@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{88b98ec0-783b-45c5-a503-63ac489ad341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="worlds">
+      <UniqueIdentifier>{f7257d9e-5a5b-40b9-9a39-4ebf2875370f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="music">
+      <UniqueIdentifier>{484f0f76-da71-4c51-8cf1-2efb64038875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fonts">
+      <UniqueIdentifier>{6dddfc5d-1430-4ddf-9c79-297b875f8cfb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\Component.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\Entity.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\EntityManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\componentEntityModel\RenderComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\BodyComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\CameraComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\MovementComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\OptionComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\TerrainComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\WireboxRenderComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\components\WirechainRenderComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\managers\ControlManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\GameContainer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\ResourcePath.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lazy-crab\Vector2f.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\lazy-crab\ResourcePathOSX.hpp">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\BodyComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\CameraComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\Component.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\managers\ControlManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\Entity.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\EntityManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\enums.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\GameContainer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\ImageRenderComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\MovementComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\OptionComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\componentEntityModel\RenderComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\ResourcePath.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\structs.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\TerrainComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\Vector2f.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\WireboxRenderComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\components\WirechainRenderComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lazy-crab\XmlTest.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\lazy-crab\ResourcePathOSX.mm">
+      <Filter>Quelldateien</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Dropbox\Mungogames\data\entities.xml">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\..\lazy-crab\images\cute_image.jpg">
+      <Filter>Images</Filter>
+    </None>
+    <None Include="..\..\lazy-crab\worlds\world1.xml">
+      <Filter>worlds</Filter>
+    </None>
+    <None Include="..\..\lazy-crab\music\fairy_road.ogg">
+      <Filter>music</Filter>
+    </None>
+    <None Include="..\..\lazy-crab\fonts\sansation.ttf">
+      <Filter>fonts</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -11,6 +11,7 @@
 
 #include "Component.h"
 #include "enums.h"
+#include "GameContainer.h"
 
 class MovementComponent: public Component {
   
@@ -18,6 +19,7 @@ public:
   MovementComponent();
   void move(Direction direction);
   void jump();
+  void update(GameContainer* gc);
 };
 
 

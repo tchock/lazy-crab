@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\C\Documents\GitHub\lazy-crab\lazy-crab;C:\Users\C\Documents\Visual Studio 2010\Includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\C\Documents\Visual Studio 2010\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="componententitymodel\Component.cpp" />
+    <ClCompile Include="componententitymodel\Entity.cpp" />
+    <ClCompile Include="componententitymodel\EntityManager.cpp" />
+    <ClCompile Include="componententitymodel\RenderComponent.cpp" />
+    <ClCompile Include="components\BodyComponent.cpp" />
+    <ClCompile Include="components\CameraComponent.cpp" />
+    <ClCompile Include="components\MovementComponent.cpp" />
+    <ClCompile Include="components\OptionComponent.cpp" />
+    <ClCompile Include="components\TerrainComponent.cpp" />
+    <ClCompile Include="components\WireboxRenderComponent.cpp" />
+    <ClCompile Include="components\WirechainRenderComponent.cpp" />
+    <ClCompile Include="GameContainer.cpp" />
+    <ClCompile Include="lol.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="managers\ControlManager.cpp" />
+    <ClCompile Include="ResourcePath.cpp" />
+    <ClCompile Include="Vector2f.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="componententitymodel\Component.h" />
+    <ClInclude Include="componententitymodel\Entity.h" />
+    <ClInclude Include="componententitymodel\EntityManager.h" />
+    <ClInclude Include="componententitymodel\RenderComponent.h" />
+    <ClInclude Include="components\BodyComponent.h" />
+    <ClInclude Include="components\CameraComponent.h" />
+    <ClInclude Include="components\ImageRenderComponent.h" />
+    <ClInclude Include="components\MovementComponent.h" />
+    <ClInclude Include="components\OptionComponent.h" />
+    <ClInclude Include="components\TerrainComponent.h" />
+    <ClInclude Include="components\WireboxRenderComponent.h" />
+    <ClInclude Include="components\WirechainRenderComponent.h" />
+    <ClInclude Include="enums.h" />
+    <ClInclude Include="GameContainer.h" />
+    <ClInclude Include="managers\ControlManager.h" />
+    <ClInclude Include="ResourcePath.h" />
+    <ClInclude Include="ResourcePathOSX.hpp" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="Vector2f.h" />
+    <ClInclude Include="XmlTest.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

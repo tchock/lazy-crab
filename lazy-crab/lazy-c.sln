@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lazy-c", "lazy-c.vcxproj", "{162238B7-7960-C6AB-597D-34046A445962}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{162238B7-7960-C6AB-597D-34046A445962}.Debug|Win32.ActiveCfg = Debug|Win32
+		{162238B7-7960-C6AB-597D-34046A445962}.Debug|Win32.Build.0 = Debug|Win32
+		{162238B7-7960-C6AB-597D-34046A445962}.Release|Win32.ActiveCfg = Release|Win32
+		{162238B7-7960-C6AB-597D-34046A445962}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
