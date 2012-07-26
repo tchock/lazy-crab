@@ -42,5 +42,7 @@ doc/
 
 Debug/
 Debug/*
+Release/
+Release/*
 data/
 data/*
