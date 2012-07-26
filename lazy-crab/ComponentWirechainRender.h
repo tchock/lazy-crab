@@ -9,7 +9,7 @@
 #ifndef lazy_crab_WirechainRenderComponent_h
 #define lazy_crab_WirechainRenderComponent_h
 
-#include "RenderComponent.h"
+#include "ComponentRender.h"
 #include "Vector2f.h"
 
 class WirechainRenderComponent: public RenderComponent {

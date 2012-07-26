@@ -9,7 +9,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
-#include "CameraComponent.h"
+#include "ComponentCamera.h"
 #include "Entity.h"
 
 CameraComponent::CameraComponent (GameContainer* gc, Entity* center, float width, float height)

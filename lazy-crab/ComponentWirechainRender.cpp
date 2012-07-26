@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "WirechainRenderComponent.h"
+#include "ComponentWirechainRender.h"
 #include "Entity.h"
 
 WirechainRenderComponent::WirechainRenderComponent(int pointCount)

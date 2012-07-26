@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
-#include "TerrainComponent.h"
+#include "ComponentTerrain.h"
 #include "Entity.h"
-#include "WirechainRenderComponent.h"
+#include "ComponentWirechainRender.h"
 
 TerrainComponent::TerrainComponent(GameContainer* gc, string id, int pointCount)
 {

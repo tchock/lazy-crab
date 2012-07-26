@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "GameContainer.h"
-#include "RenderComponent.h"
+#include "ComponentRender.h"
 
 class WireboxRenderComponent: public RenderComponent {
  

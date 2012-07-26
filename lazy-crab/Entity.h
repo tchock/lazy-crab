@@ -13,7 +13,7 @@
 #include <vector>
 #include "Vector2f.h"
 #include "Component.h"
-#include "RenderComponent.h"
+#include "ComponentRender.h"
 
 using namespace std;
 

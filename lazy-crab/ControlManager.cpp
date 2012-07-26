@@ -9,7 +9,7 @@
 #include "ControlManager.h"
 #include "enums.h"
 #include <iostream>
-#include "OptionComponent.h"
+#include "ComponentOption.h"
 
 bool ControlManager::jumpReady = true;
 

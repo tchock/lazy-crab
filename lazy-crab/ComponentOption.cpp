@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "OptionComponent.h"
+#include "ComponentOption.h"
 
 OptionComponent::OptionComponent(string type, string key, string value)
 {

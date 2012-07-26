@@ -8,9 +8,9 @@
 
 #include <iostream>
 #include <cmath>
-#include "WireboxRenderComponent.h"
+#include "ComponentWireboxRender.h"
 #include "Entity.h"
-#include "BodyComponent.h"
+#include "ComponentBody.h"
 
 WireboxRenderComponent::WireboxRenderComponent(string id)
 :RenderComponent(id)

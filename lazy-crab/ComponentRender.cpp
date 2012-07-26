@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "RenderComponent.h"
+#include "ComponentRender.h"
 
 RenderComponent::RenderComponent(string id)
 {

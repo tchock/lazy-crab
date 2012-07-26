@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "MovementComponent.h"
+#include "ComponentMovement.h"
 
 MovementComponent::MovementComponent()
 {

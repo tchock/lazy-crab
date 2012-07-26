@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "BodyComponent.h"
+#include "ComponentBody.h"
 #include "Entity.h"
 
 BodyComponent::BodyComponent(GameContainer* gc, float x, float y, bool fixedRotation, string bodyType, float density, float friction)
