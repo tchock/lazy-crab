@@ -5,6 +5,7 @@
 #include <Box2D/Box2D.h>
 #include <string>
 #include <iostream>
+
 #include "GameContainer.h"
 #include "EntityManager.h"
 #include "ControlManager.h"
@@ -19,6 +20,8 @@
 #include "ResourcePathOSX.hpp"
 #include "ResourcePath.h"
 
+#include "XmlTest.h"
+
 using namespace std;
 
 int main (int argc, const char * argv[])
@@ -29,8 +32,6 @@ int main (int argc, const char * argv[])
   // Create the main window
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-  window->setVerticalSyncEnabled(true);
-  
   
   // Load a sprite to display
   sf::Texture texture;
@@ -52,7 +53,6 @@ int main (int argc, const char * argv[])
 
   
   sf::Clock frameTimer;
-  sf::Time deltaTime;
     
   // Generates the World
   b2Vec2 gravity(0, -9.8);
@@ -64,32 +64,41 @@ int main (int argc, const char * argv[])
   EntityManager* em = new EntityManager();
   
   Entity* player = em->addEntity(new Entity(gc, "player"));
-  player->setPosition(8, 0);
+  player->setPosition(8, 30);
   player->addComponent(new BodyComponent(gc, 0.6f, 1.8f, true));
   player->addComponent(new WireboxRenderComponent("wirebox"));
   
   float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
   Entity* camera = em->addEntity(new Entity(gc, "camera"));
   camera->setPosition(100, 10);
-  camera->addComponent(new CameraComponent(gc, player, 30, 30*windowRatio));
+  camera->addComponent(new CameraComponent(gc, player, 10, 10*windowRatio));
   
   Entity* terrain = em->addEntity(new Entity(gc, "terrain"));
-  terrain->setPosition(0, -10);
-  terrain->addComponent(new WirechainRenderComponent(6));
-  terrain->addComponent(new TerrainComponent(gc, "gameTerrain", 6));
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 5, 0);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(1, 20, 5);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(2, 30, -2);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(3, 50, 10);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(4, 80, 5);
-  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(5, 100, 15);
+  
+  std::vector<Vector2f> coords = XmlTest::dump_to_stdout(resourcePath() + "worlds/world1.xml");
+  //terrain->setPosition(coords[0].getSFMLPos().x, coords[0].getSFMLPos().y);
+  terrain->setPosition(0, 0);
+  terrain->addComponent(new WirechainRenderComponent(5));
+  terrain->addComponent(new TerrainComponent(gc, "gameTerrain", 5));
+  /*for(int i = 0; i != coords.size(); i++)
+  {
+    ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(i, coords[i].x, coords[i].y);
+  }*/
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(0, 0, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(1, 30, -2);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(2, 50, 10);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(3, 80, 5);
+  ((TerrainComponent*) terrain->getComponent("gameTerrain"))->addPoint(4, 100, 15);
   ((TerrainComponent*) terrain->getComponent("gameTerrain"))->generate();
+
   
   Entity* options = em->addEntity(new Entity(gc, "options"));
   options->addComponent(new OptionComponent("controls", "moveLeft", "A"));
   options->addComponent(new OptionComponent("controls", "moveLeft_alt", "arrow_left"));
   options->addComponent(new OptionComponent("controls", "moveRight", "D"));
   options->addComponent(new OptionComponent("controls", "moveRight_alt", "arrow_right"));
+  
+  
   
   
   

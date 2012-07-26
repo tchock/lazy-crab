@@ -61,11 +61,10 @@ std::string resourcePathOSX(void)
 #endif
 	} else {
 		NSString* path = [bundle resourcePath];
-#ifdef DEBUG
-    rpath = "data/"; // if debuging/testing, don't use the resources in the app but the ones in the data folder next to it
-#else
-    rpath = [path UTF8String] + std::string("/data/"); // if not a developer version, use the resources in the app
-#eindif
+    if (DEBUG)
+      rpath = "data/"; // if debuging/testing, don't use the resources in the app but the ones in the data folder next to it
+    else
+      rpath = [path UTF8String] + std::string("/data/"); // if not a developer version, use the resources in the app
 	}
     
     [pool drain];
