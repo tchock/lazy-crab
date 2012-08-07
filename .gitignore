@@ -38,7 +38,8 @@ Thumbs.db
 *.pbxproj
 
 # DOC files #
-#doc/ jo. Ich will den doc Ordner. Warum auch nicht?
+doc/html
+doc/latex
 
 Debug/
 Debug/*
