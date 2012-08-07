@@ -38,7 +38,7 @@ Thumbs.db
 *.pbxproj
 
 # DOC files #
-doc/
+#doc/ jo. Ich will den doc Ordner. Warum auch nicht?
 
 Debug/
 Debug/*
